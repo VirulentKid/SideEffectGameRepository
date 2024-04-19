@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class TemplatePlayerController : MonoBehaviour
 {
     PlayerInput playerInput;
     PlayerInput.MainActions input;
@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
         { 
             HitTarget(hit.point);
 
-            if(hit.transform.TryGetComponent<Actor>(out Actor T))
+            if(hit.transform.TryGetComponent<TemplateActor>(out TemplateActor T))
             { T.TakeDamage(attackDamage); }
         } 
     }

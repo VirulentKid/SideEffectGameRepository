@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : MonoBehaviour
+public class TemplateActor : MonoBehaviour
 {
     int currentHealth;
     public int maxHealth;
