@@ -13,10 +13,10 @@ public enum SkillAttackType
 public enum SelectorType
 {
     None,
-    ///// <summary>
-    ///// 通过实体碰撞接触选择
-    ///// </summary>
-    //Contact,
+    /// <summary>
+    /// 通过实体碰撞接触选择
+    /// </summary>
+    Contact,
     /// <summary>
     /// 通过射线选择（RayCast方式）
     /// </summary>

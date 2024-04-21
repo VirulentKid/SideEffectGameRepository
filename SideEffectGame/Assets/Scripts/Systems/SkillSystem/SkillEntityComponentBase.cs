@@ -7,6 +7,7 @@ using UnityEngine.Events;
 // 由技能生成的物体挂载的带有技能信息的组件
 public abstract class SkillEntityComponentBase : MonoBehaviour
 {
+    private bool _isSkillEnds = true;
     private SkillRuntimeData _skillData = null; 
     public SkillRuntimeData skillData //技能管理器提供
     {
@@ -50,6 +51,30 @@ public abstract class SkillEntityComponentBase : MonoBehaviour
         }
     }
     /// <summary>
+    /// 碰撞目标
+    /// </summary>
+    public void CollideTargets(Collision[] collisions)
+    {
+        if (_selector != null)
+        {
+            IContactSkillContext contackSkillContext = _selector as IContactSkillContext;
+            contackSkillContext.collisions = collisions;
+            skillData.generatedData.skillSelectResults = _selector.SelectTarget(skillData, gameObject);
+        }
+    }
+    /// <summary>
+    /// 接触目标（非碰撞）
+    /// </summary>
+    public void ContactTargets(Collider[] colliders)
+    {
+        if (_selector != null)
+        {
+            IContactSkillContext contackSkillContext = _selector as IContactSkillContext;
+            contackSkillContext.colliders = colliders;
+            skillData.generatedData.skillSelectResults = _selector.SelectTarget(skillData, gameObject);
+        }
+    }
+    /// <summary>
     /// 效果生效
     /// </summary>
     public void ImpactTargets()
@@ -72,11 +97,14 @@ public abstract class SkillEntityComponentBase : MonoBehaviour
     /// </summary>
     public void ReleaseSkill()
     {
+        _isSkillEnds = false;
         PlayReleaseAnimation();
         PlayReleaseAFX();
         OnSkillReleased();
         float warmUpTime = skillData.basicConfig.warmUpTime;
         Invoke(nameof(OnWarmUpEnds), warmUpTime);
+        // 如果是按时间算，需要在持续时间后结束技能
+        // 否则需要手动结束，或者具体技能有提前结束的时机
         if (skillData.basicConfig.disappearType == DisappearType.TimeOver)
         {
             float skillDuration = skillData.basicConfig.durationTime;
@@ -89,6 +117,12 @@ public abstract class SkillEntityComponentBase : MonoBehaviour
     /// </summary>
     public void EndSkill()
     {
+        // 防止多次结束技能
+        if (_isSkillEnds)
+        {
+            return;
+        }
+        _isSkillEnds = true;
         if (skillData != null)
         {
             skillData.OnSkillHitsTarget?.RemoveAllListeners();

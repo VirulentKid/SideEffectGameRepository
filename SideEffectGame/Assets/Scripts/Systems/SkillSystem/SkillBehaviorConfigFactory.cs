@@ -58,6 +58,12 @@ public interface ISkillSelector
     SkillSelectResult[] SelectTarget(SkillRuntimeData data, GameObject skillEntityObject);
 }
 
+public interface IContactSkillContext
+{
+    public Collider[] colliders { set; get; }
+    public Collision[] collisions { set; get; }
+}
+
 /// <summary>
 /// 技能行为实例工厂，用反射来实现
 /// </summary>

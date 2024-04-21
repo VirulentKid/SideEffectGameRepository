@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
 /// <summary>
-/// Melee技能实体
+/// 瞬时判定型平A技能实体
 /// </summary>
 public class SimpleMeleeEntityComponent : SkillEntityComponentBase
 {
