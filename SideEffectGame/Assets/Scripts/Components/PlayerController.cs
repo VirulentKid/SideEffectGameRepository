@@ -27,6 +27,35 @@ public class PlayerController : MonoBehaviour
 
     float xRotation = 0f;
 
+    [Header("Attacking")]
+    bool attacking = false;
+
+    //public float attackDistance = 3f;
+    //public float attackDelay = 0.4f;
+    //public float attackSpeed = 1f;
+    //public float attackDamage = 1f;
+    //public LayerMask attackLayer;
+
+    //public GameObject hitEffect;
+    //public AudioClip swordSwing;
+    //public AudioClip hitSound;
+    //bool readyToAttack = true;
+    //int attackCount;
+
+    public const string IDLE = "Idle";
+    public const string WALK = "Walk";
+    public const string ATTACK1 = "Attack 1";
+    public const string ATTACK2 = "Attack 2";
+
+    [Header("Animation")]
+    [SerializeField]
+    string currentAnimationState;
+
+#if UNITY_EDITOR
+    [SerializeField]
+    int currentAnimationStateHash;
+#endif
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -107,19 +136,6 @@ public class PlayerController : MonoBehaviour
     // ANIMATIONS //
     // ---------- //
 
-    public const string IDLE = "Idle";
-    public const string WALK = "Walk";
-    public const string ATTACK1 = "Attack 1";
-    public const string ATTACK2 = "Attack 2";
-
-#if UNITY_EDITOR
-    [SerializeField]
-    int currentAnimationStateHash;
-#endif
-
-    [SerializeField]
-    string currentAnimationState;
-
     public void ChangeAnimationState(string newState)
     {
         // STOP THE SAME ANIMATION FROM INTERRUPTING WITH ITSELF //
@@ -178,27 +194,13 @@ public class PlayerController : MonoBehaviour
     // ATTACKING BEHAVIOUR //
     // ------------------- //
 
-    [Header("Attacking")]
-    public float attackDistance = 3f;
-    public float attackDelay = 0.4f;
-    public float attackSpeed = 1f;
-    public float attackDamage = 1f;
-    public LayerMask attackLayer;
-
-    public GameObject hitEffect;
-    public AudioClip swordSwing;
-    public AudioClip hitSound;
-
-    bool attacking = false;
-    bool readyToAttack = true;
-    int attackCount;
-
     public void Attack()
     {
         // if (!readyToAttack || attacking) return;
 
         SkillGeneratorComponent skillGenerator = GetComponent<SkillGeneratorComponent>();
-        SkillRuntimeData skillRuntimeData = skillGenerator.PrepareSkill(0);
+        // 先硬编码skillId
+        SkillRuntimeData skillRuntimeData = skillGenerator.PrepareSkill(1);
 
         if (skillRuntimeData == null)
         {
@@ -259,13 +261,13 @@ public class PlayerController : MonoBehaviour
     //    }
     //}
 
-    public void HitTarget(Vector3 pos)
-    {
-        // TODO: 封装到技能系统
-        audioSource.pitch = 1;
-        audioSource.PlayOneShot(hitSound);
+    //public void HitTarget(Vector3 pos)
+    //{
+    //    // TODO: 封装到技能系统
+    //    audioSource.pitch = 1;
+    //    audioSource.PlayOneShot(hitSound);
 
-        //GameObject GO = Instantiate(hitEffect, pos, Quaternion.identity);
-        //Destroy(GO, 20);
-    }
+    //    //GameObject GO = Instantiate(hitEffect, pos, Quaternion.identity);
+    //    //Destroy(GO, 20);
+    //}
 }

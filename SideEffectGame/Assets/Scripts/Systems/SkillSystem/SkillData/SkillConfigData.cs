@@ -128,7 +128,7 @@ public struct SkillBasicConfig
     /// 技能影响类型（一般为{ "Damage" }）
     /// </summary>
     [SerializeField]
-    public ImpactType[] impactType; // = { ImpactType.CostMP, ImpactType.Damage };
+    public ImpactType[] impactType; // = { ImpactType.CostMp, ImpactType.Damage };
 
     /// <summary>
     /// 体力伤害数值
@@ -297,14 +297,4 @@ public struct SkillPostLoadSettings
 
     [Header("UI")]
     public Image skillIcon;//技能事件图标
-}
-
-/// <summary>
-/// 技能运行时配置，包含运行时读取的数据
-/// </summary>
-[Serializable]
-public class SkillStaticSettings
-{
-    public SkillBasicConfig basicConfig = new SkillBasicConfig();
-    public SkillPostLoadSettings postLoadSettings = new SkillPostLoadSettings();
 }

@@ -91,8 +91,8 @@ public class SkillBehaviorConfigFactory
     /// <returns></returns>
     public static IImpactEffect[] CreateImpactEffects(SkillRuntimeData data)
     {
-        IImpactEffect[] impacts = new IImpactEffect[data.basicConfig.impactType.Length];
-        for (int i = 0; i < data.basicConfig.impactType.Length; i++)
+        IImpactEffect[] impacts = new IImpactEffect[data.basicConfig.impactType?.Length ?? 0];
+        for (int i = 0; i < (data.basicConfig.impactType?.Length ?? 0); i++)
         {
             string className = string.Format("{0}Impact", data.basicConfig.impactType[i]);
             IImpactEffect newEffect = CreateObject<IImpactEffect>(className);

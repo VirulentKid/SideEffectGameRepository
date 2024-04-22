@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8953863879292068246}
   - component: {fileID: 8953863879292068247}
   - component: {fileID: -4885212235840656008}
+  - component: {fileID: 3390004531303238512}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8953863879292068245
 MeshFilter:
@@ -121,3 +122,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnHealth: 3
+  _healthData:
+    health: 0
+  postReceiveDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!54 &3390004531303238512
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953863879292068232}
+  serializedVersion: 4
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0

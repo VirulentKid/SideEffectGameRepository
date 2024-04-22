@@ -90,6 +90,13 @@ public abstract class SkillEntityComponentBase : MonoBehaviour
         {
             _impactArray[i]?.Execute(this);
         }
+        // 非群攻技能
+        if (skillData.generatedData.skillSelectResults.Length > 0 && 
+            skillData.basicConfig.attackType != SkillAttackType.AOE &&
+            skillData.basicConfig.disappearType == DisappearType.CheckOver)
+        {
+            Invoke(nameof(EndSkill), 0f);
+        }
     }
 
     /// <summary>
@@ -163,7 +170,7 @@ public abstract class SkillEntityComponentBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     protected void PlayReleaseAnimation()

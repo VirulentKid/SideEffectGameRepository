@@ -57,48 +57,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f9a810f465eae4da12dde99f2f021a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillSettings:
-  - basicConfig:
-      skillId: 0
-      name: PlayerMelee
-      description: "\u73A9\u5BB6\u5E73A"
-      skillCd: 1.5
-      costMp: 0
-      costHp: 0
-      costDp: 1
-      level: 0
-      impactType: 0000000005000000
-      damageHp: 1
-      damageMp: 0
-      damageDp: 0
-      warmUpTime: 0.4
-      durationTime: 1
-      attackInterval: 0
-      nextComboId: -1
-      attackDistance: 3
-      attackAngle: 0
-      attackTargetTags: []
-      attackTargetLayers: []
-      attackType: 0
-      selectorType: 1
-      skillPrefabName: 
-      animationNames:
-      - Attack 1
-      - Attack 2
-      releaseVFXName: 
-      releaseAFXName: Sword_Swing
-      releaseAFXVolume: 1
-      hitVFXName: Sword_Hit_VFX
-      hitVFXDuration: 20
-      hitAFXName: Sword_Hit
-      hitAFXVolume: 1
-      disappearType: 0
-      skillIndicator: 
-      skillIconName: 
-    postLoadSettings:
-      skillSourcePrefab: {fileID: 0}
-      releaseVFXPrefab: {fileID: 0}
-      releaseAFXClip: {fileID: 0}
-      hitVFXPrefab: {fileID: 0}
-      hitAFXClip: {fileID: 0}
-      skillIcon: {fileID: 0}
+  _skillSettingsObject: {fileID: 11400000, guid: 7d646b72074f8c247aef1b38a253ec45,
+    type: 2}

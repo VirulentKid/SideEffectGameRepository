@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 406
     height: 866
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 144
+  controlID: 109
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 488
     height: 1299.3334
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -599,9 +599,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: e4750000
       m_LastClickedID: 0
-      m_ExpandedIDs: 22fbffff
+      m_ExpandedIDs: 16fbffff40700000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -673,37 +673,37 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Resources/Configs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 83
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Resources/Configs
   m_LastFoldersGridSize: 83
   m_LastProjectPath: E:\GitHubE\UnityProject\SideEffectGameRepository\SideEffectGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 11.666626}
-    m_SelectedIDs: b4740000
-    m_LastClickedID: 29876
-    m_ExpandedIDs: 00000000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b674000000ca9a3b
+    scrollPos: {x: 0, y: 107.666626}
+    m_SelectedIDs: 88760000
+    m_LastClickedID: 30344
+    m_ExpandedIDs: 00000000be740000c0740000c2740000c4740000c6740000c8740000ca740000cc740000ce740000d07400009876000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Skills
+      m_OriginalName: Skills
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30346
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -717,7 +717,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a4740000a6740000a8740000aa740000ac740000ae740000b0740000b2740000b4740000b6740000
+    m_ExpandedIDs: 00000000be740000c0740000c2740000c4740000c6740000c8740000ca740000cc740000ce740000d0740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1130,9 +1130,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.71008474, y: 1.0858629, z: -0.8292609}
+    m_Target: {x: -0.37654638, y: 1.3608773, z: -0.12699492}
     speed: 2
-    m_Value: {x: -0.008661509, y: 1.4014218, z: -0.018482447}
+    m_Value: {x: -0.37654638, y: 1.3608773, z: -0.12699492}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1178,13 +1178,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.025452942, y: -0.16509071, z: 0.0042615337, w: -0.9859492}
+    m_Target: {x: -0.12250574, y: -0.6512337, z: 0.10764466, w: -0.7411601}
     speed: 2
-    m_Value: {x: -0.06856199, y: 0.3672194, z: -0.027152507, w: -0.9272065}
+    m_Value: {x: -0.1225046, y: -0.6512276, z: 0.107643664, w: -0.7411532}
   m_Size:
     m_Target: 0.50004053
     speed: 2
-    m_Value: 3.7792838
+    m_Value: 0.50004053
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1354,7 +1354,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1284
+  m_LastSelectedObjectID: -1260
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

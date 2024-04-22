@@ -11,8 +11,12 @@ public class ContactMeleeEntityComponent : SkillEntityComponentBase
     /// <summary>
     /// 技能实体拥有的碰撞体，用于判断是否击中目标
     /// </summary>
+    [Header("Debug Data")]
     [SerializeField]
     private Collider _colliderComponent = null;
+
+    [SerializeField]
+    private HashSet<GameObject> contactedGameObjects = new HashSet<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,7 @@ public class ContactMeleeEntityComponent : SkillEntityComponentBase
     }
     protected override void OnSkillReleased()
     {
+        contactedGameObjects.Clear();
     }
 
     protected override void OnSkillHitsTarget(SkillSelectResult skillSelectResult)
@@ -65,10 +70,11 @@ public class ContactMeleeEntityComponent : SkillEntityComponentBase
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision != null)
+        if (collision != null && !contactedGameObjects.Contains(collision.gameObject))
         {
             //执行选区算法
             CollideTargets(new Collision[] { collision });
+            contactedGameObjects.Add(collision.gameObject);
             //执行影响算法
             ImpactTargets();
         }
